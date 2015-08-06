@@ -93,7 +93,7 @@ public class PagerTag extends TagSupport {
 		model.put("url", url);
 
 		// 获取velocity引擎
-		VelocityEngine velocityEngine = SpringContextUtils.getBean("velocityEngine");
+		VelocityEngine velocityEngine = SpringContextUtils.getBean("velocityEngine", VelocityEngine.class);
 		String pageHtml = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, templateName, "UTF-8", model);
 
 		try {
